@@ -9,10 +9,7 @@ resource "azurerm_resource_group" "example-1" {
   location = "East US"
 }
 
-resource "azurerm_resource_group" "example-2" {
-  name     = "example-2-resources"
-  location = "East US"
-}
+
 
 # Create the hub virtual network
 resource "azurerm_virtual_network" "hub" {
@@ -21,6 +18,8 @@ resource "azurerm_virtual_network" "hub" {
   location            = azurerm_resource_group.example-1.location
   resource_group_name = azurerm_resource_group.example-1.name
 }
+
+
 
 resource "azurerm_resource_group" "example-2" {
   name     = "example-2-resources"
