@@ -22,6 +22,11 @@ resource "azurerm_virtual_network" "hub" {
   resource_group_name = azurerm_resource_group.example-1.name
 }
 
+resource "azurerm_resource_group" "example-2" {
+  name     = "example-2-resources"
+  location = "East US"
+}
+
 # Create the spoke virtual networks
 resource "azurerm_virtual_network" "spoke1" {
   name                = "spoke-network-1"
